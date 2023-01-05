@@ -25,13 +25,13 @@ function buttonFocusRemover() {
 function inputHandler(event) {
 
   if (event === bill) {
-    if (event > 0) {
+    if (+event.value > 0) {
       return billInput = event.value;
     }
   }
 
   if (event === customTip) {
-    if (event > 0) {
+    if (+event.value > 0) {
       buttonFocusRemover();
       customBool = true;
       return tipInput === event.value;
@@ -39,7 +39,7 @@ function inputHandler(event) {
   }
 
   if (event === quantity) {
-    if (event.value <= 0) {
+    if (+event.value <= 0) {
       event.classList.remove('people-amount-input');
       event.classList.add('people-amount-input-false');
     } else {
