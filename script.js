@@ -1,17 +1,17 @@
 
-let bill = document.querySelector('#bill-input');
-let btns = document.querySelectorAll('.tip-button');
-let btn5 = document.querySelector('.tip-5');
-let btn10 = document.querySelector('.tip-10');
-let btn15 = document.querySelector('.tip-15');
-let btn25 = document.querySelector('.tip-25');
-let btn50 = document.querySelector('.tip-50');
-let customTip = document.querySelector('.tip-custom');
-let quantity = document.querySelector('.people-amount-input');
-let resetButton = document.getElementById('#reset-button');
+const bill = document.getElementById('bill-input');
+const btns = document.querySelectorAll('.tip-button');
+const btn5 = document.getElementById('tip-5');
+const btn10 = document.getElementById('tip-10');
+const btn15 = document.getElementById('tip-15');
+const btn25 = document.getElementById('tip-25');
+const btn50 = document.getElementById('tip-50');
+const customTip = document.getElementById('custom-tip');
+const quantity = document.getElementById('quantity-number');
+const resetButton = document.getElementById('reset-button');
 
-let output1 = document.getElementById('#tip-output');
-let output2 = document.getElementById('#total-output');
+const output1 = document.getElementById('tip-output');
+const output2 = document.getElementById('total-output');
 
 let billInput = 0;
 let tipInput = 0;
@@ -19,22 +19,22 @@ let quantityInput = 0;
 let customBool = false; 
 
 function buttonFocusRemover() {
-  btns.forEach((e) => e.classList.remove('clicked-button'));
+  return btns.forEach((e) => e.classList.remove('clicked-button'));
 }
 
 function inputHandler(event) {
 
   if (event === bill) {
     if (event > 0) {
-      billInput = event.value;
+      return billInput = event.value;
     }
   }
 
   if (event === customTip) {
     if (event > 0) {
       buttonFocusRemover();
-      tipInput === event.value;
       customBool = true;
+      return tipInput === event.value;
     }
   }
 
@@ -45,7 +45,7 @@ function inputHandler(event) {
     } else {
       event.classList.remove('people-amount-input-false');
       event.classList.add('people-amount-input');
-      quantityInput = quantity.value;
+      return quantityInput = quantity.value;
     }
   }
 
@@ -54,54 +54,83 @@ function inputHandler(event) {
 function buttonInputHandler(event) {
 
   if (event === btn5) {
+    if (customBool === true) {
+      customBool = false;
+      customTip.textContent = '';
+    }
     buttonFocusRemover();
     btn5.classList.add('clicked-button');
-    tipInput = 0.05;
+    return tipInput = 0.05;
   } else if (event === btn10) {
+    if (customBool === true) {
+      customBool = false;
+      customTip.textContent = '';
+    }
     buttonFocusRemover();
     btn10.classList.add('clicked-button');
-    tipInput = 0.10;
+    return tipInput = 0.10;
   } else if (event === btn15) {
+    if (customBool === true) {
+      customBool = false;
+      customTip.textContent = '';
+    }
     buttonFocusRemover();
     btn15.classList.add('clicked-button');
-    tipInput = 0.15;
+    return tipInput = 0.15;
   } else if (event === btn25) {
+    if (customBool === true) {
+      customBool = false;
+      customTip.textContent = '';
+    }
     buttonFocusRemover();
     btn25.classList.add('clicked-button');
-    tipInput = 0.25;
+    return tipInput = 0.25;
   } else if (event === btn50) {
+    if (customBool === true) {
+      customBool = false;
+      customTip.textContent = '';
+    }
     buttonFocusRemover();
     btn50.classList.add('clicked-button');
-    tipInput = 0.50;
+    return tipInput = 0.50;
   }
 }
 
 function setOutputs() {
   if (billInput > 0 && tipInput > 0 && quantityInput > 0) {
     let tip = (billInput * tipInput) / quantityInput;
-    output1.textContent = tip;
-    output2.textContent = tip + (billInput / quantityInput);
+    output1.textContent = '$' + tip;
+    output2.textContent = '$' + tip + (billInput / quantityInput);
   }
 }
 
-bill.addEventListener('inputs', inputHandler(bill));
-customTip.addEventListener('inputs', inputHandler(customTip));
-quantity.addEventListener('inputs', inputHandler(quantity));
+// Event Listeners that will add the values of the inputs into
+// billInput, tipInput and, quantityInput respectively. 
 
-btn5.addEventListener('click', buttonInputHandler(btn5));
-btn10.addEventListener('click', buttonInputHandler(btn10));
-btn15.addEventListener('click', buttonInputHandler(btn15));
-btn25.addEventListener('click', buttonInputHandler(btn25));
-btn50.addEventListener('click', buttonInputHandler(btn50));
+  bill.addEventListener('input', () => inputHandler(bill));
+  customTip.addEventListener('input', () => inputHandler(customTip));
+  quantity.addEventListener('input', () => inputHandler(quantity));
 
-bill.addEventListener('inputs', setOutputs());
-customTip.addEventListener('inputs', setOutputs());
-quantity.addEventListener('inputs', setOutputs());
+  btn5.addEventListener('click', () => buttonInputHandler(btn5));
+  btn10.addEventListener('click', () => buttonInputHandler(btn10));
+  btn15.addEventListener('click', () => buttonInputHandler(btn15));
+  btn25.addEventListener('click', () => buttonInputHandler(btn25));
+  btn50.addEventListener('click', () => buttonInputHandler(btn50));
 
-btn5.addEventListener('click', setOutputs());
-btn10.addEventListener('click', setOutputs());
-btn15.addEventListener('click', setOutputs());
-btn25.addEventListener('click', setOutputs());
-btn50.addEventListener('click', setOutputs());
 
+// Event Listeners that will take the values of
+// billInput, tipInput and, quantityInput and use them to calculate
+// the new values of output1 and and output2 using the setOutPuts() function.
+
+  bill.addEventListener('input', () => setOutputs());
+  customTip.addEventListener('input', () => setOutputs());
+  quantity.addEventListener('input', () => setOutputs());
+
+  btn5.addEventListener('click', () => setOutputs());
+  btn10.addEventListener('click', () => setOutputs());
+  btn15.addEventListener('click', () => setOutputs());
+  btn25.addEventListener('click', () => setOutputs());
+  btn50.addEventListener('click', () => setOutputs());
+
+  
 
