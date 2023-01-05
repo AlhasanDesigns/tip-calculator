@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+  <div class="logo"><img src="./images/logo.svg" alt="Logo"></div>
+  
+  <div class="tip-calculator">
+    
+    <div class="inputs">
+      <div class="bill-section">
+        <label for="">Bill</label>
+        <input type="number" class="input bill-input" id="bill-input" min="0" placeholder="0">
+      </div>
+      <div class="tip-section">
+        <label for="">Select Tip %</label>
+        <div class="tip">
+          <button class="tip-button tip-5">5%</button>
+          <button class="tip-button tip-10">10%</button>
+          <button class="tip-button tip-15">15%</button>
+          <button class="tip-button tip-25">25%</button>
+          <button class="tip-button tip-50">50%</button>
+          <input type="number" class="tip-custom" min="0" max="100" placeholder="Custom">
+        </div>
+      </div>
+      <div class="people-section">
+        <div class="people-amount">
+          <label for="">Number of People</label>
+          <label for="" class="error-false">Can't be zero</label>
+        </div>
+        <input type="number" class="input people-amount-input" min="0" placeholder="1">
+      </div>
+    </div>
+
+    <div class="outputs">
+        <div class="calculations-1">
+          <div class="text-labels">
+            <label for="" id="tip-amount">Tip Amount</label>
+            <p>/ person</p>
+          </div>
+          <output id="tip-output">$0.00</output>
+        </div>
+        <div class="calculations-2">
+          <div class="text-labels">
+            <label for="" id="total">Total</label>
+            <p>/ person</p>
+          </div>
+          <output id="total-output">$0.00</output>
+        </div>
+        <button type="reset" id="reset-button">RESET</button>
+    </div> 
+
+  </div>
+
+<script src="./script.js"></script>
+</body>
+</html>
