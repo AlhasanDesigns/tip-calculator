@@ -101,13 +101,13 @@ input[type="number"] {
   background-color: #26c2ae;
 }
 
-.tip-5, .tip-15, .tip-50 {
+#tip-5, #tip-15, #tip-50 {
   margin-top: 7px;
   margin-right: 7px;
   margin-bottom: 7px;
 }
 
-.tip-10, .tip-25, .tip-custom {
+#tip-10, #tip-25, #custom-tip {
   margin-top: 7px;
   margin-left: 7px;
   margin-bottom: 7px;
@@ -166,6 +166,10 @@ input[type="number"] {
   background-repeat: no-repeat;
   background-position-x: 4%;
   background-position-y: center;
+  outline: 3px solid #ce7867;
+}
+
+.people-amount-input-false:focus {
   outline: 3px solid #ce7867;
 }
 
@@ -274,17 +278,17 @@ output {
 
   }
 
-  .tip-5, .tip-25 {
+  #tip-5, #tip-25 {
     margin-right: 7px;
     margin-left: 0px;
   }
 
-  .tip-10, .tip-50 {
+  #tip-10, #tip-50 {
     margin-right: 7px;
     margin-left: 7px;
   }
 
-  .tip-15, .tip-custom {
+  #tip-15, #custom-tip {
     margin-left: 7px;
     margin-right: 0px;
   }
