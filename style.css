@@ -6,13 +6,28 @@
   font-size: 20px;
 }
 
+html {
+  width: 100vw;
+  height: auto;
+}
+
 body {
   background-color: #c5e5e7;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #26c2ae;
+  margin: 5px;
+}
+
+a:hover {
+  color: white;
 }
 
 input {
@@ -27,12 +42,25 @@ input {
   background-color: white;
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   flex-direction: column;
-  padding: 25px;
+  padding: 40px 25px 40px 25px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   box-shadow: 0px 0px 75px 29px rgba(0,0,0,0.1);
+}
+
+.credits {
+  display: none;
+  background-color: #124e48;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#personal-logo {
+  filter: invert(58%) sepia(74%) saturate(408%) hue-rotate(123deg) brightness(94%) contrast(93%);
+  width: 50px;
+  height: 50px;
 }
 
 .inputs {
@@ -142,13 +170,15 @@ input[type="number"] {
   justify-content: space-between;
 }
 
-.error-false {
+#zero-value {
   color: #ce7867;
+}
+
+.error-false {
   visibility: hidden;
 }
 
 .error-true {
-  color: #ce7867;
   visibility: visible;
 }
 
@@ -162,6 +192,7 @@ input[type="number"] {
 
 .people-amount-input-false {
   margin-top: 1px;
+  margin-bottom: 0px;
   background-image: url(./images/icon-person.svg);
   background-repeat: no-repeat;
   background-position-x: 4%;
@@ -250,13 +281,25 @@ output {
 
   body {
     justify-content: center;
+    height: 100vh;
+  }
+
+  .logo {
+    margin-bottom: 100px;
   }
 
   .tip-calculator {
+    padding: 25px 25px 25px 25px;
     flex-direction: row;
     width: 768px;
     height: 420px;
     border-radius: 15px;
+  }
+
+  .credits {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
   }
 
   .inputs, .outputs {

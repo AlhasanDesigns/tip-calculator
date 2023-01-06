@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/Favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-  <title>Frontend Mentor | Tip calculator app</title>
+  <title>Tip Calculator App</title>
 </head>
 <body>
   <div class="logo"><img src="./images/logo.svg" alt="Logo"></div>
@@ -34,7 +34,7 @@
       <div class="people-section">
         <div class="people-amount">
           <label for="">Number of People</label>
-          <label for="" class="error-false">Can't be zero</label>
+          <label for="" class="error-false" id="zero-value">Can't be zero</label>
         </div>
         <input type="number" class="input people-amount-input" id="quantity-number" min="0" placeholder="1">
       </div>
@@ -58,6 +58,11 @@
         <button type="reset" id="reset-button">RESET</button>
     </div> 
 
+  </div>
+  
+  <div class="credits">
+    <img src="./images/Al Designs-01.svg" alt="Personal Logo" id="personal-logo">
+    <p><a href="https://twitter.com/Alhasan_Designs">By Alhasan Designs</a></p>
   </div>
 
 <script src="./script.js"></script>
